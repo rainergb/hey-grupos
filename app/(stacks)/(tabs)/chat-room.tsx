@@ -8,12 +8,12 @@ import {
   StatusBar,
 } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import Header from '../../../components/ui/header';
 import ChatMessage from '../../../components/ui/chat-message';
 import MessageInput from '../../../components/ui/message-input';
 import { MESSAGES } from '../../../mocks/mock-data';
-import { useThemeColor } from '../../../hooks/useThemeColor';
 import useAuth from '../../../hooks/use-auth';
+import { Header } from 'react-native/Libraries/NewAppScreen';
+import { useThemeColor } from '../../../hooks/use-theme-color';
 import { Message } from '../../../types';
 
 export default function ChatRoom() {
@@ -21,7 +21,6 @@ export default function ChatRoom() {
   const [messages, setMessages] = useState<Message[]>(MESSAGES);
   const { user } = useAuth();
   const currentUser = user?.name || 'Lucas';
-  
   const chatBackgroundColor = useThemeColor({}, 'chatBackground');
 
   const handleSendMessage = (text: string) => {
@@ -33,16 +32,13 @@ export default function ChatRoom() {
     };
     
     setMessages([...messages, newMessage]);
-  };
-
   return (
-    <SafeAreaView className="flex-1 bg-[#E5DDD5] dark:bg-gray-900">
+    <SafeAreaView>
       <StatusBar />
       <Header title={groupName || 'Chat'} showBackButton />
       
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        className="flex-1"
         keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
       >
         <FlatList
@@ -56,9 +52,9 @@ export default function ChatRoom() {
           )}
           contentContainerStyle={{ paddingVertical: 16 }}
         />
-        
-        <MessageInput onSend={handleSendMessage} />
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    
+  </SafeAreaView>
   );
-}s
+  }
+  };
