@@ -1,0 +1,41 @@
+const tintColorLight = '#2E54D4';
+const tintColorDark = '#4C6FFF';
+
+export default {
+  light: {
+    primary: '#2E54D4',
+    background: '#FFFFFF',
+    card: '#FFFFFF',
+    text: '#333333',
+    border: '#EFEFEF',
+    tint: tintColorLight,
+    tabIconDefault: '#CCCCCC',
+    tabIconSelected: tintColorLight,
+    gray: '#F6F6F6',
+    green: '#51C880',
+    lightGreen: '#DCF8C5',
+    red: '#F64B57',
+    inputBackground: '#EFEFEF',
+    textDark: '#333333',
+    textLight: '#999999',
+    chatBackground: '#E5DDD5',
+  },
+  dark: {
+    primary: '#4C6FFF',
+    background: '#121212',
+    card: '#1E1E1E',
+    text: '#FFFFFF',
+    border: '#333333',
+    tint: tintColorDark,
+    tabIconDefault: '#666666',
+    tabIconSelected: tintColorDark,
+    gray: '#2C2C2C',
+    green: '#51C880',
+    lightGreen: '#1A3528',
+    red: '#F64B57',
+    inputBackground: '#2C2C2C',
+    textDark: '#FFFFFF',
+    textLight: '#AAAAAA',
+    chatBackground: '#121212',
+  },
+};
