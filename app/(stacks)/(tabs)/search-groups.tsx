@@ -11,6 +11,10 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import Header from "../../../components/ui/header";
+import GroupItem from "../../../components/ui/group-item";
+import { useThemeColor } from "../../../hooks/use-theme-color";
+import { GROUPS } from "../../../mocks/mock-data";
+import { Group } from "../../../types";
 
 export default function SearchGroups() {
   const [searchQuery, setSearchQuery] = useState("");
