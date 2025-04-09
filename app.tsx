@@ -1,7 +1,5 @@
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { StatusBar } from 'expo-status-bar';
-import { useColorScheme } from './hooks/useColorScheme';
+import { useColorScheme } from "./hooks/use-color-scheme";
 
 export default function App() {
   const colorScheme = useColorScheme();
